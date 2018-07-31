@@ -7,7 +7,12 @@
   height: 80px;
 }
 
+/********************* Header Styles *********************/
 .App-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; 
   background-color: #222;
   height: 150px;
   padding: 20px;
@@ -15,9 +20,28 @@
 }
 
 .App-title {
+  /* padding-left: 100%;
+  padding-right: 100%; */
+  margin: 0px;
   font-size: 1.5em;
+}
+
+#dashes {
+  width: 100%;
+  margin: 0px;
+  border-bottom: 5px dashed yellow;
+  border-top: none;
 }
 
 .App-intro {
   font-size: large;
+}
+/********************* Root Styles *********************/
+
+#rootLabel {
+  background-color: rgb(102, 186, 222);
+  text-align: left;
+  margin: 10px 5px 10px 5px;
+  padding: 5px;
+  border-radius: 5px;
 }
