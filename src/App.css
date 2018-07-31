@@ -26,6 +26,16 @@
   font-size: 1.5em;
 }
 
+.topHalf {
+  padding-right: 50px;
+  padding-bottom: 10px;
+}
+
+.bottomHalf {
+  padding-left: 50px;
+  padding-top: 10px;
+}
+
 #dashes {
   width: 100%;
   margin: 0px;
