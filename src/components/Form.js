@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+//import api goodies
+import {addBranch } from '../api.js';
+
 class Form extends Component {
     constructor(props){
         super(props);
@@ -40,10 +43,13 @@ class Form extends Component {
             f.children !== null &&
             f.min !== null &&
             f.max !== null){
-            fetch("http://localhost:5000/add", {
-                method: 'post',
-                body: JSON.stringify(this.state),
-            })
+            
+            addBranch(this.state)
+            
+            // fetch("http://localhost:5000/add", {
+            //     method: 'post',
+            //     body: JSON.stringify(this.state),
+            // })
         } else {
             alert('Please complete all fields before branch addition');
         }
