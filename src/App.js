@@ -4,8 +4,24 @@ import './App.css';
 //import components
 import Branch from './components/Branch.js';
 import Form from './components/Form.js';
+
+//import api
+import { getBranchData } from './api';
+
+
+
 class App extends Component {
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    getBranchData()
+  }
+
+
   render() {
+    // getBranchData()
     return (
       <div className="App">
         <header className="App-header">
