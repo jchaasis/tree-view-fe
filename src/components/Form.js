@@ -35,12 +35,18 @@ class Form extends Component {
     }
     //verify that all the fields have been completed then send the info to the backend
     sendData(){
-        console.log(this.state)
-
-        fetch("http://localhost:5000/add", {
-            method: 'post',
-            body: JSON.stringify(this.state),
-          })
+        let f = this.state;
+        if (f.name !== null &&
+            f.children !== null &&
+            f.min !== null &&
+            f.max !== null){
+            fetch("http://localhost:5000/add", {
+                method: 'post',
+                body: JSON.stringify(this.state),
+            })
+        } else {
+            alert('Please complete all fields before branch addition');
+        }
     }
 
     render() {
