@@ -49,9 +49,10 @@
 /********************* Root Styles *********************/
 
 #rootLabel {
-  background-color: rgb(102, 186, 222);
+  /* background-color: rgb(102, 186, 222); */
   text-align: left;
   margin: 10px 5px 10px 5px;
   padding: 5px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
+  border-bottom: 3px solid rgb(102, 186, 222);
 }

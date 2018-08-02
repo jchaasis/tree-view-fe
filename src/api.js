@@ -6,10 +6,9 @@ const socket = openSocket('http://localhost:5000');
 
 //retrieve all the branch data
 function getBranchData(cb){
-    console.log('receiving branch data')
-    socket.on('branches', data => {
-        console.log(data)
-    });
+    let treeInfo=[];
+    //pass in callback so we can do something with the data
+    socket.on('branches', data => cb(data, null));
     //send event
     socket.emit('getBranchData', 1000);
 }
@@ -17,11 +16,16 @@ function getBranchData(cb){
 //add a new branch
 function addBranch(b){
 
-    console.log(b)
+    // console.log(b)
 
-    socket.on('newBranch', data => {
-        console.log(data)
-    })
+    socket.on('newBranch', tree => {
+        console.log(tree)
+        
+        // // return tree;
+        // this.setstate({
+        //     data: ['gree', 'red'] ,
+        // })
+    });
 
     socket.emit('addBranch', b)
 

@@ -17,10 +17,11 @@ class Branch extends Component {
   // }
 
   render() {
+    let leaves = this.props.data.leaves.map((leaf)=><Leaf key={leaf.id }num={leaf.leafNumber} />)
     return (
       <div className="branchContainer">
-            <h2> Branch Name will go here </h2>
-            <Leaf/>
+            <h2> {this.props.data.name} </h2>
+            {leaves}
       </div>
     );
   }

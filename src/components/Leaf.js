@@ -6,7 +6,7 @@ class Leaf extends Component {
   render() {
     return (
       <div className="leafContainer">
-            <h3> this is a leaf </h3>
+            <h3> {this.props.num} </h3>
       </div>
     );
   }
