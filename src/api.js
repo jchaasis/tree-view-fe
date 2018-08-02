@@ -14,24 +14,21 @@ function getBranchData(cb){
 
 //add a new branch
 function addBranch(b){
-
-    // console.log(b)
-
+    //TODO: delete this
     socket.on('newBranch', tree => {
         console.log(tree)
-        
-        // // return tree;
-        // this.setstate({
-        //     data: ['gree', 'red'] ,
-        // })
     });
-
+    
     socket.emit('addBranch', b)
-
-    // client.on('addBranch', (formData)=> {
-    //     console.log(formData);
-    //     client.emit('newBranch', 'newBranch');
-    // })
 }
 
-export { getBranchData, addBranch };
+//delete an existing branch
+function deleteBranch(b){
+    //pass back the branch id so that we can identify it in the table for deletion
+    socket.on('', tree => {
+        console.log(tree)
+    })
+    socket.emit('deleteBranch', b)
+}
+
+export { getBranchData, addBranch, deleteBranch};

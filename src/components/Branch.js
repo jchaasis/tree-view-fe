@@ -19,11 +19,10 @@ toggleEdit(){
   })
 }
 
-
   render() {
     let leaves = this.props.data.leaves.map((leaf)=><Leaf key={leaf.id }num={leaf.leafNumber} />)
 
-    let editForm = this.state.edit === true ? <EditForm /> : null;
+    let editForm = this.state.edit === true ? <EditForm branchId={this.props.data.id}/> : null;
     return (
       <div className='branchContainer'>
         <div className='branchTitleContainer'>

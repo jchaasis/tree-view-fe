@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 
-
+//import API goodies
+import {deleteBranch} from '../api.js';
 class EditForm extends Component {
+
+  //handle the deletion event
+  handleDelete(){
+    console.log(this.props.branchId)
+    deleteBranch(this.props.branchId);
+  }
+
   render() {
     return (
       <div className="editForm">
@@ -19,7 +27,7 @@ class EditForm extends Component {
         </div>
         <div className='buttons'>
             <button id='update'> update </button>
-            <button id='delete'> delete </button>
+            <button id='delete' onClick={()=>this.handleDelete()}> delete </button>
             <button id='cancel'> cancel </button>
         </div>
       </div>

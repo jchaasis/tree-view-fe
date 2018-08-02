@@ -110,6 +110,10 @@
   width: 30px;
 }
 
+.buttons button {
+  border-radius: 5px;
+  border: none;
+}
 #update {
   background: rgb(63, 220, 116);
 }
