@@ -82,7 +82,6 @@
 
 .branchTitle {
   text-decoration: underline rgb(238,99,93);
-  margin-right: 50px;
   margin-left: 5px;
 }
 
@@ -90,10 +89,38 @@
   background:  rgb(238,99,93);
   color: white;
   /* margin-left: 10%; */
-  /* margin-right: 50%; */
+  margin-left: 200px;
   padding: 5px;
   border-radius: 5px;
 }
+
+/********************* EditForm Styles *********************/
+.editForm {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 3;
+  border: 1px solid grey;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.numberInput {
+  width: 30px;
+}
+
+#update {
+  background: rgb(63, 220, 116);
+}
+#delete {
+  background: rgb(255, 73, 73);
+}
+#cancel {
+  background: rgb(255, 228, 73);
+}
+
+
 
 /********************* Leaf Styles *********************/
 .leafContainer {
@@ -102,7 +129,6 @@
   margin-left: 10%;
   margin-top: 0px;
   border-left: 1px solid black;
- 
 }
 .leafNum {
   margin-top: 0px;

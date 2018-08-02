@@ -15,27 +15,13 @@ class App extends Component {
     this.state = {
       data: [],
     }
-
-    
   }
 
   componentDidMount(){
     getBranchData((details)=> this.setState({
       data: details.Branches
-  }));
-
-    
-    // this.setState({
-    //   data: getBranchData()
-    // });
-    // let info = getBranchData();
-
-    // console.log(info)
-    // getBranchData((info)=> this.setState({
-    //   data: info,
-    // }));
+    }));
   }
-
 
   render() {
     // getBranchData()
@@ -45,16 +31,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title topHalf">Live Action</h1>
+          <h1 className="App-title topHalf">Live-Updating</h1>
           <hr id="dashes"/>
           <h1 className="App-title bottomHalf">Tree View</h1>
         </header>
         <div>
           <Form/>
           <h1 id="rootLabel"> Root </h1>
-          
           {branches}
-         
         </div>
       </div>
     );
