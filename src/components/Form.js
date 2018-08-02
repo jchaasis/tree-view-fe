@@ -61,12 +61,12 @@ class Form extends Component {
             <label> Name </label>
             <input type="text" onChange={ev=>this.addName(ev)}/>
             <label> Children </label>
-            <input type="number" max="15" min="0" onChange={ev=>this.addChildren(ev)}/>
+            <input className='numberInput' type="number" max="15" min="0" onChange={ev=>this.addChildren(ev)}/>
             <label> Min Range</label>
-            <input type="number" onChange={ev=>this.addMin(ev)}/>
+            <input className='numberInput' type="number" onChange={ev=>this.addMin(ev)}/>
             <label> Max Range</label>
-            <input type="number" onChange={ev=>this.addMax(ev)}/>
-            <button onClick={()=>this.sendData()}> Add </button>
+            <input className='numberInput' type="number" onChange={ev=>this.addMax(ev)}/>
+            <button className='update' onClick={()=>this.sendData()}> Add </button>
         </div>
         );
     }

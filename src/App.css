@@ -110,20 +110,23 @@
   width: 30px;
 }
 
-.buttons button {
+button {
   border-radius: 5px;
   border: none;
 }
-#update {
+
+button:focus {
+  outline: none;
+}
+.update {
   background: rgb(63, 220, 116);
 }
-#delete {
+.delete {
   background: rgb(255, 73, 73);
 }
-#cancel {
+.cancel {
   background: rgb(255, 228, 73);
 }
-
 
 
 /********************* Leaf Styles *********************/

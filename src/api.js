@@ -18,17 +18,22 @@ function addBranch(b){
     socket.on('newBranch', tree => {
         console.log(tree)
     });
-    
     socket.emit('addBranch', b)
 }
 
 //delete an existing branch
 function deleteBranch(b){
     //pass back the branch id so that we can identify it in the table for deletion
-    socket.on('', tree => {
-        console.log(tree)
-    })
+    // socket.on('', tree => {
+    //     console.log(tree)
+    // })
     socket.emit('deleteBranch', b)
 }
 
-export { getBranchData, addBranch, deleteBranch};
+//updateBranch
+function updateBranch(b){
+    socket.emit('updateBranch', b);
+}
+
+
+export { getBranchData, addBranch, deleteBranch, updateBranch};
