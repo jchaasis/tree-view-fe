@@ -6,7 +6,6 @@ const socket = openSocket('http://localhost:5000');
 
 //retrieve all the branch data
 function getBranchData(cb){
-    let treeInfo=[];
     //pass in callback so we can do something with the data
     socket.on('branches', data => cb(data, null));
     //send event

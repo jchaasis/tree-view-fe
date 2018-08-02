@@ -50,8 +50,9 @@ class App extends Component {
           <h1 className="App-title bottomHalf">Tree View</h1>
         </header>
         <div>
-          <h1 id="rootLabel"> Root </h1>
           <Form/>
+          <h1 id="rootLabel"> Root </h1>
+          
           {branches}
          
         </div>

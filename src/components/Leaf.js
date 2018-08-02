@@ -6,7 +6,10 @@ class Leaf extends Component {
   render() {
     return (
       <div className="leafContainer">
-            <h3> {this.props.num} </h3>
+        <div className='branchTitleContainer'>
+            <hr className='twig'/>
+            <p className='leafNum'> {this.props.num} </p>
+        </div>
       </div>
     );
   }

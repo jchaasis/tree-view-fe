@@ -56,3 +56,55 @@
   /* border-radius: 5px; */
   border-bottom: 3px solid rgb(102, 186, 222);
 }
+
+/********************* Branch Styles *********************/
+.branchContainer {
+
+ margin-left: 25px;
+ border-left: 1px solid black;
+}
+
+.branchTitleContainer {
+  margin-right:100%;
+  width: 100%;
+  display:inline-flex;
+  align-items:center;
+  justify-content: flex-start;
+}
+
+.twig {
+  border: 1px solid black;
+  margin: 0px;
+  /* height: 1px; */
+  width: 100px;
+  /* margin-right: 0px; */
+}
+
+.branchTitle {
+  text-decoration: underline rgb(238,99,93);
+  margin-right: 50px;
+  margin-left: 5px;
+}
+
+.branchRange {
+  background:  rgb(238,99,93);
+  color: white;
+  /* margin-left: 10%; */
+  /* margin-right: 50%; */
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/********************* Leaf Styles *********************/
+.leafContainer {
+  width: 100px;
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 0px;
+  border-left: 1px solid black;
+ 
+}
+.leafNum {
+  margin-top: 0px;
+  padding-left: 15px;
+}
