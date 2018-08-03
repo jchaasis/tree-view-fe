@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 //import API goodies
 import {deleteBranch, updateBranch} from '../api.js';
+//import utility goodies
+import {validateRange} from '../utility.js';
 class EditForm extends Component {
     constructor(props){
         super(props)
@@ -22,7 +24,38 @@ class EditForm extends Component {
   }
   //handle the update event
   handleUpdate(){
-      updateBranch(this.state);
+    //shortened for use below
+    let branch = this.state;
+    let oldBranch = this.props.branch;
+    //validate the min and max ranges are acceptable
+    if(branch.min !== '' && branch.max !== ''){
+        if(validateRange(branch.min, branch.max) === false){
+            alert('Ruh Roh! Please check to make sure your min and max values are valid and try again.')
+            return;
+         } 
+    } 
+    //if just the min is being changed, make sure it is still lower than the current max
+    if(branch.min !== '' && branch.max === ''){
+        if(validateRange(branch.min, oldBranch.max) === false){
+            alert('Ruh Roh! Please check to make sure your new min is less than your max, or add a new max.')
+            return;
+         } 
+    }
+
+    //if just the max is being changed, make sure it is still higher than your min
+    if(branch.min === '' && branch.max !== ''){
+        if(validateRange(oldBranch.min, branch.max) === false){
+            alert('Ruh Roh! Please check to make sure your new max is greater than your min, or add a new min.')
+            return;
+         } 
+    }
+      //makes sure the range values are valid
+    //  if(validateRange(branch.min, branch.max) === false){
+    //     alert('Ruh Roh! Please check to make sure your min and max values are valid and try again.')
+    //     return;
+    //  } 
+     console.log('still gonna update')
+      updateBranch(branch);
       this.props.toggleEdit();
   }
   //handle the form updates
@@ -49,7 +82,7 @@ class EditForm extends Component {
     return (
       <div className="editForm">
         <div>
-            <label> name</label>
+            <label> new name </label>
             <input type='text' placeholder='optional' onChange={ev=>this.handleName(ev)}/>
         </div>
         <div>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 //import api goodies
 import {addBranch } from '../api.js';
+//import utility goodies
+import {validateRange} from '../utility.js';
 
 class Form extends Component {
     constructor(props){
@@ -38,7 +40,14 @@ class Form extends Component {
     }
     //verify that all the fields have been completed then send the info to the backend
     sendData(){
+        //shortened for use below
         let f = this.state;
+        //make sure the numbers for the range are acceptable, meaning, the min is less than the max.
+        if(validateRange(f.min, f.max) === false){
+            alert('Ruh Roh! Please check to make sure your min is less than your max')
+            return;
+         } 
+        //If we have made it to this point and all fields are complete, send the branch info to the backend
         if (f.name !== null &&
             f.children !== null &&
             f.min !== null &&
