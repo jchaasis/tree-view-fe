@@ -10,13 +10,14 @@ class EditForm extends Component {
             name: '',
             min: '',
             max: '',
-            id: this.props.branchId,
+            id: this.props.branch.id,
+            children: this.props.branch.children
         }
     }
 
   //handle the deletion event
   handleDelete(){
-    deleteBranch(this.props.branchId);
+    deleteBranch(this.props.branch.id);
     this.props.toggleEdit();
   }
   //handle the update event
@@ -49,15 +50,15 @@ class EditForm extends Component {
       <div className="editForm">
         <div>
             <label> name</label>
-            <input type='text' onChange={ev=>this.handleName(ev)}/>
+            <input type='text' placeholder='optional' onChange={ev=>this.handleName(ev)}/>
         </div>
         <div>
             <label> new min </label>
-            <input className='numberInput' type='number' min='0' onChange={(ev)=>this.handleMin(ev)}/>
+            <input className='numberInput' type='number' placeholder='optional' min='0' onChange={(ev)=>this.handleMin(ev)}/>
         </div>
         <div>
             <label> new max </label>
-            <input className='numberInput' type='number' onChange={(ev)=>this.handleMax(ev)}/>
+            <input className='numberInput' type='number' placeholder='optional' onChange={(ev)=>this.handleMax(ev)}/>
         </div>
         <div className='buttons'>
             <button className='update' onClick={()=>this.handleUpdate()}> update </button>
