@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 100%;
 }
 
 .App-logo {
@@ -20,8 +21,6 @@
 }
 
 .App-title {
-  /* padding-left: 100%;
-  padding-right: 100%; */
   margin: 0px;
   font-size: 1.5em;
 }
@@ -49,65 +48,146 @@
 /********************* Root Styles *********************/
 
 #rootLabel {
-  /* background-color: rgb(102, 186, 222); */
   text-align: left;
   margin: 10px 5px 10px 5px;
   padding: 5px;
-  /* border-radius: 5px; */
+}
+
+#reqsButton {
+  border: 1px solid grey;
+  margin-right: 2px;
+  z-index: 1;
+}
+
+#reqsModal {
+  position: absolute;
+  bottom: 25px;
+  left: 35px;
+}
+
+.reqsContainer {
+  position: relative;
+  z-index: 1;
+  background: white;
+  border: 1px solid grey;
+  border-bottom: 1px solid white;
+  border-radius: 5px;
+  font-size: smaller;
+  text-align: left;
+}
+
+.requirements {
+  /* padding-left: 0px; */
+}
+
+#reqsTriangle {
+  background: white;
+  position: relative;
+  bottom: 30px;
+  left: 30px;
+  border: 1px solid grey;
+  width: 50px;
+  height: 50px;
+  background: white;
+  transform: rotate(45deg);
+}
+
+.rootContainer{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   border-bottom: 3px solid rgb(102, 186, 222);
 }
 
+.rootContainer button {
+  height: 20px;
+}
+
+/********************* Add form styles *********************/
+
+.addFormContainer {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.addFormContainer .inputContainer {
+  width: auto;
+}
+
+.addFormContainer .cancel {
+  margin-left: 2px;
+}
 /********************* Branch Styles *********************/
 .branchContainer {
-
+ padding-top: 25px;
  margin-left: 25px;
- border-left: 1px solid black;
+ border-left: 2px solid black;
 }
 
 .branchTitleContainer {
-  margin-right:100%;
+  margin-bottom: 0px;
   width: 100%;
   display:inline-flex;
   align-items:center;
   justify-content: flex-start;
+  height: 20px;
+  padding-top: 30px;
 }
 
 .twig {
   border: 1px solid black;
   margin: 0px;
-  /* height: 1px; */
   width: 100px;
-  /* margin-right: 0px; */
 }
 
 .branchTitle {
-  text-decoration: underline rgb(238,99,93);
+  /* text-decoration: underline rgb(238,99,93); */
   margin-left: 5px;
 }
 
 .branchRange {
+  font-size: x-small;
   background:  rgb(238,99,93);
   color: white;
-  /* margin-left: 10%; */
-  margin-left: 200px;
-  padding: 5px;
+  margin-left: 15px;
+  padding: 3px;
   border-radius: 5px;
 }
 
 /********************* EditForm Styles *********************/
 .editForm {
+  background: white;
   display: flex;
+  align-items: flex-end;
   flex-direction: column;
-  position: relative;
+  position: absolute;
   z-index: 3;
   border: 1px solid grey;
   padding: 5px;
-  margin-left: 10px;
+  margin-left: 250px;
   border-radius: 5px;
 }
 
+.inputContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nameInput {
+  width: 55px;
+}
+
 .numberInput {
-  width: 30px;
+  width: 55px;
 }
 
 button {
@@ -115,29 +195,52 @@ button {
   border: none;
 }
 
+button:hover {
+  opacity: 0.8;
+}
+
 button:focus {
   outline: none;
+}
+.editButton {
+  margin-left: 10px;
 }
 .update {
   background: rgb(63, 220, 116);
 }
+
 .delete {
   background: rgb(255, 73, 73);
+  margin-left: 2px;
+  margin-right: 2px;
 }
 .cancel {
   background: rgb(255, 228, 73);
 }
 
-
 /********************* Leaf Styles *********************/
 .leafContainer {
+  padding-top: 20px;
+  padding-bottom: 0px;
   width: 100px;
   text-align: left;
-  margin-left: 10%;
+  margin-left: 120px;
   margin-top: 0px;
-  border-left: 1px solid black;
+  border-left: 2px solid black;
 }
+
+.leafTitleContainer {
+  margin-right:100%;
+  margin-bottom: 0px;
+  width: 100%;
+  display:flex;
+  align-items:flex-end;
+  /* justify-content: flex-start; */
+
+}
+
 .leafNum {
   margin-top: 0px;
+  margin-bottom: 0px;
   padding-left: 15px;
 }

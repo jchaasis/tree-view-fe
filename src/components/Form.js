@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 //import api goodies
 import {addBranch } from '../api.js';
 //import utility goodies
-import {validateRange} from '../utility.js';
+import {validateRange, validateName, validateChildren} from '../utility.js';
 
 class Form extends Component {
     constructor(props){
@@ -17,6 +17,7 @@ class Form extends Component {
         }
     }
 
+   
     //update the state with the appropriate form data
     addName(ev){
         this.setState({
@@ -47,35 +48,54 @@ class Form extends Component {
             alert('Ruh Roh! Please check to make sure your min is less than your max')
             return;
          } 
+
+         if(validateName(f.name) === false) {
+             alert('Ruh Roh! Please check that your name is between 3 and 15 characters.')
+             return;
+         }
+
+         //make sure the value for the children is acceptable
+         if(validateChildren(f.children) === false) {
+             alert('Ruh Roh! Please check that your children value is between 0 and 15.')
+             return;
+         }
         //If we have made it to this point and all fields are complete, send the branch info to the backend
         if (f.name !== null &&
             f.children !== null &&
             f.min !== null &&
             f.max !== null){
-            
+            //send data to the backend
             addBranch(this.state)
-            
-            // fetch("http://localhost:5000/add", {
-            //     method: 'post',
-            //     body: JSON.stringify(this.state),
-            // })
         } else {
             alert('Please complete all fields before branch addition');
         }
+        //remove the add form
+        this.props.toggleAdd();
     }
 
     render() {
         return (
-        <div className="formContainer">
-            <label> Name </label>
-            <input type="text" onChange={ev=>this.addName(ev)}/>
-            <label> Children </label>
-            <input className='numberInput' type="number" max="15" min="0" onChange={ev=>this.addChildren(ev)}/>
-            <label> Min Range</label>
-            <input className='numberInput' type="number" onChange={ev=>this.addMin(ev)}/>
-            <label> Max Range</label>
-            <input className='numberInput' type="number" onChange={ev=>this.addMax(ev)}/>
-            <button className='update' onClick={()=>this.sendData()}> Add </button>
+        <div className="addFormContainer">
+            <div className='inputContainer'>
+                <label> name </label>
+                <input className="nameInput" type="text" maxLength="15" onChange={ev=>this.addName(ev)}/>
+            </div>
+            <div className='inputContainer'>
+                <label> children </label>
+                <input className='numberInput' maxLength="2" type="number" max="15" min="0" onChange={ev=>this.addChildren(ev)}/>
+            </div>
+            <div className='inputContainer'>
+                <label> min range </label>
+                <input className='numberInput' type="number" maxLength="10" onChange={ev=>this.addMin(ev)}/>
+            </div>
+            <div className='inputContainer'>
+                <label> max range </label>
+                <input className='numberInput' type="number" maxLength="10" onChange={ev=>this.addMax(ev)}/>
+            </div>
+            <div className='buttonContainer'>
+                <button className='update' onClick={()=>this.sendData()}> add </button>
+                <button className='cancel' onClick={()=> this.props.toggleAdd()}> cancel </button>
+            </div>
         </div>
         );
     }

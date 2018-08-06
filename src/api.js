@@ -32,8 +32,17 @@ function deleteBranch(b){
 
 //updateBranch
 function updateBranch(b){
+  
     socket.emit('updateBranch', b);
 }
 
+function throwError(message){
+    console.log('there has been an error')
+    socket.on('formError', message => {
+        console.log('message')
+        alert(message);
+    });
+}
 
-export { getBranchData, addBranch, deleteBranch, updateBranch};
+
+export { getBranchData, addBranch, deleteBranch, updateBranch, throwError};

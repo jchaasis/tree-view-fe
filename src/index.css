@@ -3,3 +3,14 @@ body {
   padding: 0;
   font-family: 'Raleway', sans-serif;
 }
+
+
+@media only screen and (min-width: 1000px) {
+  /* For desktop: */
+ body{
+ 
+   
+   width: 60%;
+   margin-left: 20%;
+ }
+}
