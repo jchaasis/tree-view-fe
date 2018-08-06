@@ -39,8 +39,6 @@ class App extends Component {
     this.setState({
       reqs: !this.state.reqs,
     })
-
-    console.log('hovered')
   }
 
   render() {
@@ -54,13 +52,28 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title topHalf">Live-Updating</h1>
+        <div className="carsContainer">
+          <div role='img' className="vehicle"> &#128661; </div>
+          <div role='img' className="vehicle"> &#128663; </div>
+          <div role='img' className="vehicle"> &#128652; </div>
+          <div role='img' className="vehicle"> &#128665; </div>
+          <div role='img' className="vehicle"> &#128666; </div>
+          <div role='img' className="vehicle"> &#128663; </div>
+        </div>
+          <h1 className="App-title topHalf">treensportation</h1>
           <hr id="dashes"/>
-          <h1 className="App-title bottomHalf">Tree View</h1>
+          <h1 className="App-title bottomHalf">live-updating node tree</h1>
+        <div className="carsContainer bottomCars">
+          <div role='img' className="vehicle bottomVehic"> &#128661; </div>
+          <div role='img' className="vehicle bottomVehic"> &#128663; </div>
+          <div role='img' className="vehicle bottomVehic"> &#128652; </div>
+          <div role='img' className="vehicle bottomVehic"> &#128665; </div>
+          <div role='img' className="vehicle bottomVehic"> &#128666; </div>
+          <div role='img' className="vehicle bottomVehic"> &#128663; </div>
+        </div>
         </header>
         <div>
           <div className="rootContainer">
-            
             <h1 id="rootLabel"> root </h1>
             <button id="reqsButton" onClick={()=> this.toggleReqs()}> ? </button>
             {requirements}

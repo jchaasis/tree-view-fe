@@ -29,8 +29,6 @@ class EditForm extends Component {
     //shortened for use below
     let branch = this.state;
     let oldBranch = this.props.branch;
-    console.log(oldBranch)
- 
     //validate the min and max ranges are acceptable
     if(branch.min !== '' && branch.max !== ''){
         if(validateRange(branch.min, branch.max) === false){
@@ -40,7 +38,6 @@ class EditForm extends Component {
     } 
     //If just the min is being changed, make sure it is still lower than the current max.
     if(branch.min !== '' && branch.max === ''){
-       
         if(validateRange(branch.min, oldBranch.max) === false){
             alert('Ruh Roh! Please check to make sure your new min is less than your max, or add a new max.')
             return;
@@ -53,7 +50,6 @@ class EditForm extends Component {
             return;
          } 
     }
-
       updateBranch(branch);
       this.props.toggleEdit();
   }

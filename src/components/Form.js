@@ -17,7 +17,6 @@ class Form extends Component {
         }
     }
 
-   
     //update the state with the appropriate form data
     addName(ev){
         this.setState({
@@ -43,17 +42,17 @@ class Form extends Component {
     sendData(){
         //shortened for use below
         let f = this.state;
-        //make sure the numbers for the range are acceptable, meaning, the min is less than the max.
+        //we will also perform some validation on the backend. Perform some initials validation steps just for fun.
+        //make sure the numbers for the range are acceptable, meaning, the min is less than the max. 
         if(validateRange(f.min, f.max) === false){
             alert('Ruh Roh! Please check to make sure your min is less than your max')
             return;
          } 
-
+         //validate the length of the name
          if(validateName(f.name) === false) {
              alert('Ruh Roh! Please check that your name is between 3 and 15 characters.')
              return;
          }
-
          //make sure the value for the children is acceptable
          if(validateChildren(f.children) === false) {
              alert('Ruh Roh! Please check that your children value is between 0 and 15.')

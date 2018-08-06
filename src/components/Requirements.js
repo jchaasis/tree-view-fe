@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class Requirements extends Component {
+    
   render() {
     return (
     <div id='reqsModal'>
