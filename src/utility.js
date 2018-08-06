@@ -1,5 +1,4 @@
 //functions to be used in various places across the application
-var list = require('badwords-list');
 
 function validateRange(min,max){
     // if the min is actually lower than the max, return true
@@ -21,12 +20,6 @@ function validateName(str){
     if (str.length < 3 || str.length > 15){
         return false;
     }
-
-
-    // console.log(list.array)
-    let joined = list.array.join(' ');
-    let re = /\W+(`${joined}`)\W+/gi
-    console.log(re)
 }
 
 export {validateRange, validateName, validateChildren};

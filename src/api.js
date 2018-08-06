@@ -13,8 +13,6 @@ function getBranchData(cb){
 
 //add a new branch
 function addBranch(b){
-    //TODO: delete this
-   
     socket.emit('addBranch', b)
 }
 
@@ -35,6 +33,5 @@ function throwError(message){
         alert(message);
     });
 }
-
 
 export { getBranchData, addBranch, deleteBranch, updateBranch, throwError};
