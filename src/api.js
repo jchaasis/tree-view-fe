@@ -2,7 +2,7 @@
 
 
 import openSocket from 'socket.io-client';
-const socket = openSocket('http://localhost:5000');
+const socket = openSocket('https://secret-eyrie-65426.herokuapp.com/');
 
 //retrieve all the branch data
 function getBranchData(cb){
